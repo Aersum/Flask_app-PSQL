@@ -4,13 +4,15 @@ from .method_views import home, products, page_not_found, register, login, logou
 from .keyspaces import create_db_api
 from .config import runtime_config
 from .app_database import db, ma
+from flask_migrate import Migrate
 
 
 def run_app():
     app = Flask(__name__)
+    app.config.from_object(runtime_config())
     db.init_app(app)
     ma.init_app(app)
-    app.config.from_object(runtime_config())
+    migrate = Migrate(app, db)
     app.register_blueprint(factory_api)
     app.register_blueprint(bike_api)
     app.register_blueprint(home)
