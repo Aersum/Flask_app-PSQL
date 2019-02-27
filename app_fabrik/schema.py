@@ -10,6 +10,7 @@ class UserSchema(ma.ModelSchema):
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 
+
 class BikeSchema(ma.ModelSchema):
     class Meta:
         # fields = ('id', 'name', 'brand', 'bike_type', 'wheel_size','')

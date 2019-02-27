@@ -3,6 +3,7 @@ from flask import session, current_app
 
 app = run_app()
 
+
 @app.before_first_request
 def set_mode():
     test_var = current_app.config.get("TEST_VARIABLE")

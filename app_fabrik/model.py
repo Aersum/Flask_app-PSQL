@@ -8,7 +8,7 @@ class UsersTable(db.Model):
     username = db.Column(db.String(30))
     email = db.Column(db.String(40))
     age = db.Column(db.INTEGER)
-    password_hash = db.Column(db.String(100))
+    password_hash = db.Column(db.String(200))
 
     def __init__(self, username, email, age, password_hash):
         self.username = username
